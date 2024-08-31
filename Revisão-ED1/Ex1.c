@@ -15,15 +15,17 @@ int main() {
     scanf("%d", &n);
     
     int vetor[n];
-    
-    for (int i = 0; i < n; i++) {       //entrada dos elementos do vetor
+
+    //entrada dos elementos do vetor
+    for (int i = 0; i < n; i++) {       
         scanf("%i", &vetor[i]);
     }
     
     int j, temp;
 
+    //percorre o vetor invertendo a ordem dos elementos com o auxilio do temp
     for (j = 0; j < n/2; j++) {
-        temp = vetor[j];                  //percorre o vetor invertendo a ordem dos elementos com o auxilio do temp
+        temp = vetor[j];                 
         vetor[j] = vetor[(n - 1) - j];
         vetor[(n - 1) - j] = temp;
     }
