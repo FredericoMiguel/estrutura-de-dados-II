@@ -9,6 +9,7 @@ O código apresenta uma lista duplamente ligada com operações básicas para in
 #include <stdio.h>
 #include <stdlib.h>
 
+//definição de um nó
 typedef struct Node {
     int data;
     struct Node* next;
@@ -17,6 +18,7 @@ typedef struct Node {
 
 Node* head = NULL;
 
+//função para inserir elementos
 void insertFront() {
     int value;
     
@@ -32,6 +34,8 @@ void insertFront() {
     head = newNode;
 }
 
+
+//função para deletar elementos
 void deleteNode(Node* node) {
     if (node == head)
         head = node->next;
@@ -42,6 +46,7 @@ void deleteNode(Node* node) {
     free(node);
 }
 
+//função para imprimir a lista
 void printList() {
     Node* temp = head;
     while (temp != NULL) {
@@ -51,6 +56,8 @@ void printList() {
     printf("\n");
 }
 
+
+//função de busca de um elemento específico escolhido pelo usuário
 void searchNode(int value) {
     Node* temp = head;
     int search = 0;
@@ -79,6 +86,8 @@ void searchNode(int value) {
     }
 }
 
+
+//função principal
 int main() {
     insertFront();
     insertFront();
