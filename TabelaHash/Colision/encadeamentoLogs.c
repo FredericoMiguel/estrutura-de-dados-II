@@ -78,7 +78,7 @@ void excluir(TabelaHash *tabela, int id) {
                 prev -> next = atual -> next;
             }
             
-            printf("Transação com ID %d foi excluída.\n", id);
+            printf("Log com ID %d foi excluído.\n", id);
             
             return;
         }
@@ -87,7 +87,7 @@ void excluir(TabelaHash *tabela, int id) {
         atual = atual -> next;
     }
     
-    printf("Transação com ID %d não encontrada para exclusão.\n", id);
+    printf("Log com ID %d não encontrado para exclusão.\n", id);
 }
 
 int contar_elementos(TabelaHash *tabela) {
@@ -147,7 +147,7 @@ int main() {
     
     inserir_dados_predefinidos(&tabela);
 
-    printf("\nTodas as transações inseridas: %d\n", contar_elementos(&tabela));
+    printf("\nTodos os logs inseridas: %d\n", contar_elementos(&tabela));
     exibir_todas(&tabela);
 
     Log *buscarLog = buscar(&tabela, 2);
@@ -158,11 +158,11 @@ int main() {
         printf("Log não encontrado.\n");
     }
     
-    printf("\nTransações excluidas:\n");
+    printf("\nLogs excluidos:\n");
     excluir(&tabela, 13);
     excluir(&tabela, 22);
     
-    printf("\nTransações Atualizadas: %d\n", contar_elementos(&tabela));
+    printf("\nLogs Atualizadas: %d\n", contar_elementos(&tabela));
     exibir_todas(&tabela);
     
     return 0;
